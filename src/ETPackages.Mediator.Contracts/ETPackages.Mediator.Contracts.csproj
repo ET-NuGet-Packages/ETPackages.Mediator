@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<Authors>Emir TARTAR;etartar</Authors>
+	<Description>Contracts package for requests, responses, and notifications</Description>
+	<PackageTags>mediator;request;response;queries;commands;notifications</PackageTags>
+	<PackageIcon>logo_128x128.png</PackageIcon>
+	<IncludeSymbols>true</IncludeSymbols>
+	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	<Version>1.0.0</Version>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\assets\logo_128x128.png" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+</Project>

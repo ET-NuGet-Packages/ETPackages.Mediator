@@ -1,0 +1,43 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.txt = LICENSE.txt
+		assets\logo_128x128.png = assets\logo_128x128.png
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{20C4D4FE-CA99-464C-AE98-096C4ECB00FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETPackages.Mediator.Contracts", "src\ETPackages.Mediator.Contracts\ETPackages.Mediator.Contracts.csproj", "{DF632815-5CDA-43B7-9D7E-FFF0F63EEBE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETPackages.Mediator", "src\ETPackages.Mediator\ETPackages.Mediator.csproj", "{4C2D7CB5-3E96-49D6-9AE7-F10FDA7EFF94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF632815-5CDA-43B7-9D7E-FFF0F63EEBE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF632815-5CDA-43B7-9D7E-FFF0F63EEBE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF632815-5CDA-43B7-9D7E-FFF0F63EEBE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF632815-5CDA-43B7-9D7E-FFF0F63EEBE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C2D7CB5-3E96-49D6-9AE7-F10FDA7EFF94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C2D7CB5-3E96-49D6-9AE7-F10FDA7EFF94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C2D7CB5-3E96-49D6-9AE7-F10FDA7EFF94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C2D7CB5-3E96-49D6-9AE7-F10FDA7EFF94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DF632815-5CDA-43B7-9D7E-FFF0F63EEBE7} = {20C4D4FE-CA99-464C-AE98-096C4ECB00FC}
+		{4C2D7CB5-3E96-49D6-9AE7-F10FDA7EFF94} = {20C4D4FE-CA99-464C-AE98-096C4ECB00FC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E3C3421-58C4-4AF7-A163-9A4744F7E0F2}
+	EndGlobalSection
+EndGlobal
