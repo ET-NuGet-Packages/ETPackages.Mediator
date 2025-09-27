@@ -1,0 +1,55 @@
+name: Publish to NuGet
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'   # Örn: v1.0.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        dotnet: [ '8.0.x', '9.0.x' ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET ${{ matrix.dotnet }}
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.dotnet }}
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test --configuration Release --no-build --verbosity normal
+        continue-on-error: false
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: build  # build & test job başarılı olmalı
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0.x'   # Pack için son sürümü kullanıyoruz
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Pack
+        run: dotnet pack --configuration Release -o out
+
+      - name: Publish to NuGet
+        run: dotnet nuget push "out/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json

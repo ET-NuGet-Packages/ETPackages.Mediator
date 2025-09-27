@@ -1,8 +1,31 @@
-﻿﻿# ETPackages.Mediator
+﻿﻿📌 ETPackages.Mediator
+
+[![Build & Publish](https://github.com/ET-NuGet-Packages/ETPackages.Mediator/actions/workflows/nuget-publish.yml/badge.svg)](https://github.com/ET-NuGet-Packages/ETPackages.Mediator/actions)
+[![NuGet Version](https://img.shields.io/nuget/v/ETPackages.Mediator.svg?logo=nuget)](https://www.nuget.org/packages/ETPackages.Mediator/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/ETPackages.Mediator.svg)](https://www.nuget.org/packages/ETPackages.Mediator/)
+[![Target Frameworks](https://img.shields.io/badge/.NET-6%20%7C%207%20%7C%208%20%7C%209-blue?logo=dotnet)](https://dotnet.microsoft.com/)
 
 **ETPackages.Mediator** is a simple and performance-oriented library for .NET. It supports `IRequest`, `INotification`, `IPipelineBehavior`, and works seamlessly with Dependency Injection.
 
-## 🔧 Installation
+---
+
+## 📦 Features
+
+- ✅ Request/Response (`IRequest`, `IRequest<TResponse>`)
+- ✅ Notifications (`INotification`)
+- ✅ Pipeline behaviors (`IPipelineBehavior`)
+- ✅ Dependency Injection ready
+- ✅ Fully async support
+
+---
+
+## 📋 Requirements
+
+- .NET 8.0 or higher  
+
+---
+
+## 📦 Installation
 
 Install via [NuGet](https://www.nuget.org/packages/ETPackages.Mediator):
 
@@ -15,6 +38,8 @@ Or via the .NET Core command line interface:
 ```dash
 dotnet add package ETPackages.Mediator
 ```
+
+---
 
 ## 🚀 Getting Started
 
@@ -29,6 +54,8 @@ services.AddMediator(options =>
     options.AddOpenBehavior(typeof(ValidationBehavior<>)); //no response
 });
 ```
+
+---
 
 ## 🧩 IRequest / IRequestHandler
 
@@ -172,14 +199,8 @@ Publish a notification:
 await mediator.Publish(new ProductCreatedEvent(product.Id));
 ```
 
-## 📦 Features
-
-- ✅ Request/Response (`IRequest`, `IRequest<TResponse>`)
-- ✅ Notifications (`INotification`)
-- ✅ Pipeline behaviors (`IPipelineBehavior`)
-- ✅ Dependency Injection ready
-- ✅ Fully async support
+---
 
 ## 📁 License
 
-Licensed under the MIT License.
+This project is licensed under the MIT License.
