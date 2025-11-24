@@ -44,12 +44,15 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '10.0.x'   # Pack için son sürümü kullanıyoruz
-
-      - name: Restore dependencies
-        run: dotnet restore
-
+          
+      - name: Restore
+        run: dotnet restore src/ETPackages.Mediator/ETPackages.Mediator.csproj
+        
+      - name: Build
+        run: dotnet build src/ETPackages.Mediator/ETPackages.Mediator.csproj -c Release
+        
       - name: Pack
-        run: dotnet pack --configuration Release -o out
-
+        run: dotnet pack src/ETPackages.Mediator/ETPackages.Mediator.csproj -c Release -o ./out /p:IsPackable=true
+        
       - name: Publish to NuGet
-        run: dotnet nuget push "out/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push "./out/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
