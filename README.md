@@ -3,7 +3,7 @@
 [![Build & Publish](https://github.com/ET-NuGet-Packages/ETPackages.Mediator/actions/workflows/nuget-publish.yml/badge.svg)](https://github.com/ET-NuGet-Packages/ETPackages.Mediator/actions)
 [![NuGet Version](https://img.shields.io/nuget/v/ETPackages.Mediator.svg?logo=nuget)](https://www.nuget.org/packages/ETPackages.Mediator/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/ETPackages.Mediator.svg)](https://www.nuget.org/packages/ETPackages.Mediator/)
-[![Target Frameworks](https://img.shields.io/badge/.NET-8%20%7C%209-blue?logo=dotnet)](https://dotnet.microsoft.com/)
+[![Target Frameworks](https://img.shields.io/badge/.NET-8%20%7C%209%20%7C%2010-blue?logo=dotnet)](https://dotnet.microsoft.com/)
 
 **ETPackages.Mediator** is a simple and performance-oriented library for .NET. It supports `IRequest`, `INotification`, `IPipelineBehavior`, and works seamlessly with Dependency Injection.
 
