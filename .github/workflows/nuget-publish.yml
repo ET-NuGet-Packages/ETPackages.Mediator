@@ -37,22 +37,28 @@ jobs:
     needs: build  # build & test job başarılı olmalı
 
     steps:
+      # 1️⃣ Repo’yu çek
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2️⃣ .NET SDK kurulumu
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '10.0.x'   # Pack için son sürümü kullanıyoruz
-          
+
+      # 3️⃣ Restore paketler
       - name: Restore
         run: dotnet restore src/ETPackages.Mediator/ETPackages.Mediator.csproj
-        
+
+      # 4️⃣ Build library projesi
       - name: Build
         run: dotnet build src/ETPackages.Mediator/ETPackages.Mediator.csproj -c Release
-        
+
+      # 5️⃣ Pack library projesi (sample projeler pack edilmez)
       - name: Pack
         run: dotnet pack src/ETPackages.Mediator/ETPackages.Mediator.csproj -c Release -o ./out /p:IsPackable=true
-        
+
+      # 6️⃣ NuGet push
       - name: Publish to NuGet
         run: dotnet nuget push "./out/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
